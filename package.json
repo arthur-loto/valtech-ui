@@ -44,5 +44,8 @@
       "import": "./dist/valtech-ui.es.js"
     },
     "./dist/valtech-ui.css": "./dist/valtech-ui.css"
+  },
+  "dependencies": {
+    "storybook-addon-themes": "^6.1.0"
   }
 }

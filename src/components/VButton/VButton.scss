@@ -4,6 +4,76 @@
 /// @author Marco Borsoi <marco.borsoi@valtech.com>
 ////
 
+:root {
+  display: block;
+
+  /* tokens généraux */
+  --border-radius: var(--brk-button-border-radius); /* pas de version tertiary? */
+  --outline: var(--brk-button-outline-width) solid transparent;
+  --outline-color-focus: var(--brk-button-outline-color-focus-standard);
+  --outline-offset: 0.125em; /* n'est pas dans les tokens */
+  --padding: var(--brk-button-padding-top) var(--brk-button-padding-right) var(--brk-button-padding-bottom) var(--brk-button-padding-left);
+
+
+
+  --background-color: var(--brk-button-tertiary-background-color-default-standard);
+  --background-color-active: var(--brk-button-tertiary-background-color-active-standard);
+  --background-color-focus: var(--brk-button-tertiary-background-color-focus-standard);
+  --background-color-hover: var(--brk-button-tertiary-background-color-hover-standard);
+  --border: var(--brk-button-tertiary-border-width) solid var(--brk-button-tertiary-border-color-default-standard);
+  --border-color-active: var(--brk-button-tertiary-border-color-active-standard);
+  --border-color-focus: var(--brk-button-tertiary-border-color-focus-standard);
+  --border-color-hover: var(--brk-button-tertiary-border-color-hover-standard);
+  --box-shadow:
+    var(--brk-button-tertiary-box-shadow-default-standard-x)
+    var(--brk-button-tertiary-box-shadow-default-standard-y)
+    var(--brk-button-tertiary-box-shadow-default-standard-blur)
+    var(--brk-button-tertiary-box-shadow-default-standard-spread)
+    var(--brk-button-tertiary-box-shadow-default-standard-color);
+  --box-shadow-active:
+    var(--brk-button-tertiary-box-shadow-active-standard-x)
+    var(--brk-button-tertiary-box-shadow-active-standard-y)
+    var(--brk-button-tertiary-box-shadow-active-standard-blur)
+    var(--brk-button-tertiary-box-shadow-active-standard-spread)
+    var(--brk-button-tertiary-box-shadow-active-standard-color);
+  --box-shadow-focus:
+    var(--brk-button-tertiary-box-shadow-focus-standard-x)
+    var(--brk-button-tertiary-box-shadow-focus-standard-y)
+    var(--brk-button-tertiary-box-shadow-focus-standard-blur)
+    var(--brk-button-tertiary-box-shadow-focus-standard-spread)
+    var(--brk-button-tertiary-box-shadow-focus-standard-color);
+  --box-shadow-hover:
+    var(--brk-button-tertiary-box-shadow-hover-standard-x)
+    var(--brk-button-tertiary-box-shadow-hover-standard-y)
+    var(--brk-button-tertiary-box-shadow-hover-standard-blur)
+    var(--brk-button-tertiary-box-shadow-hover-standard-spread)
+    var(--brk-button-tertiary-box-shadow-hover-standard-color);
+  --color: var(--brk-button-tertiary-font-color-default-standard);
+  --color-active: var(--brk-button-tertiary-font-color-active-standard);
+  --color-focus: var(--brk-button-tertiary-font-color-focus-standard);
+  --color-hover: var(--brk-button-tertiary-font-color-hover-standard);
+  --font-family: var(--brk-button-tertiary-label-font-family);
+  --font-family: 'Graphik';
+  --font-size: var(--brk-button-tertiary-label-font-size);
+  --font-weight: var(--brk-button-tertiary-label-font-weight);
+  --letter-spacing: var(--brk-button-tertiary-label-letter-spacing);
+  --line-height: 85%; /* à mettre le token --brk-button-tertiary-label-line-height quand il sera réparé */
+  --text-decoration: var(--brk-button-tertiary-label-text-decoration);
+  --text-transform: var(--brk-button-tertiary-label-text-case);
+  --padding: var(--brk-button-tertiary-sm-padding-top) var(--brk-button-tertiary-sm-padding-right) var(--brk-button-tertiary-padding-2xs-bottom) var(--brk-button-tertiary-padding-2xs-left);
+  --padding: var(--brk-button-tertiary-sm-padding-vertical) var(--brk-button-tertiary-sm-padding-horizontal);
+  
+
+
+
+
+
+}
+
+
+
+
+
 .v-button {
   border: 0;
   border-radius: 3em;
@@ -14,6 +84,52 @@
   font-weight: 700;
   line-height: 1;
   padding: 10px 20px;
+
+  background-color: var(--background-color);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  color: var(--color);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
+  line-height: var(--line-height);
+  margin: 0;
+  outline: var(--outline);
+  padding: var(--padding);
+  text-decoration: var(--text-decoration);
+  text-transform: var(--text-transform);
+  
+  &:active {
+    background-color: var(--background-color-active);
+    border-color: var(--border-color-active);
+    box-shadow: var(--box-shadow-active);
+    color: var(--color-active);
+  }
+
+  &:focus-visible {
+    background-color: var(--background-color-focus);
+    border-color: var(--border-color-focus);
+    box-shadow: var(--box-shadow-focus);
+    color: var(--color-focus);
+    outline-color: var(--outline-color-focus);
+  }
+
+  &:hover {
+    background-color: var(--background-color-hover);
+    border-color: var(--border-color-hover);
+    box-shadow: var(--box-shadow-hover);
+    color: var(--color-hover);
+  }
+
+
+
+
+
+
 }
 
 .v-button--primary {
