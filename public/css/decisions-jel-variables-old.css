@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 29 Jul 2022 19:16:27 GMT
+ * Generated on Fri, 29 Jul 2022 18:39:07 GMT
  */
 
 :root {
@@ -66,7 +66,7 @@
   --brk-button-opacity-disabled: 50%;
   --brk-button-primary-sm-label-font-family: Graphik;
   --brk-button-primary-sm-label-font-weight: Medium;
-  --brk-button-primary-sm-label-line-height: 85%;
+  --brk-button-primary-sm-label-line-height: 85%px;
   --brk-button-primary-sm-label-font-size: 11px;
   --brk-button-primary-sm-label-letter-spacing: 2%;
   --brk-button-primary-sm-label-paragraph-spacing: 0px;
@@ -74,7 +74,7 @@
   --brk-button-primary-sm-label-text-case: none;
   --brk-button-tertiary-sm-label-font-family: Graphik;
   --brk-button-tertiary-sm-label-font-weight: Bold;
-  --brk-button-tertiary-sm-label-line-height: 85%;
+  --brk-button-tertiary-sm-label-line-height: 85%px;
   --brk-button-tertiary-sm-label-font-size: 9px;
   --brk-button-tertiary-sm-label-letter-spacing: 2%;
   --brk-button-tertiary-sm-label-paragraph-spacing: 0px;
@@ -82,7 +82,7 @@
   --brk-button-tertiary-sm-label-text-case: uppercase;
   --brk-button-tertiary-md-label-font-family: Graphik;
   --brk-button-tertiary-md-label-font-weight: Bold;
-  --brk-button-tertiary-md-label-line-height: 85%;
+  --brk-button-tertiary-md-label-line-height: 85%px;
   --brk-button-tertiary-md-label-font-size: 15px;
   --brk-button-tertiary-md-label-letter-spacing: 2%;
   --brk-button-tertiary-md-label-paragraph-spacing: 0px;
@@ -90,7 +90,7 @@
   --brk-button-tertiary-md-label-text-case: uppercase;
   --brk-button-tertiary-lg-label-font-family: Graphik;
   --brk-button-tertiary-lg-label-font-weight: Bold;
-  --brk-button-tertiary-lg-label-line-height: 85%;
+  --brk-button-tertiary-lg-label-line-height: 85%px;
   --brk-button-tertiary-lg-label-font-size: 20px;
   --brk-button-tertiary-lg-label-letter-spacing: 2%;
   --brk-button-tertiary-lg-label-paragraph-spacing: 0px;
@@ -98,7 +98,7 @@
   --brk-button-tertiary-lg-label-text-case: uppercase;
   --brk-button-tertiary-xl-label-font-family: Graphik;
   --brk-button-tertiary-xl-label-font-weight: Bold;
-  --brk-button-tertiary-xl-label-line-height: 85%;
+  --brk-button-tertiary-xl-label-line-height: 85%px;
   --brk-button-tertiary-xl-label-font-size: 24px;
   --brk-button-tertiary-xl-label-letter-spacing: 2%;
   --brk-button-tertiary-xl-label-paragraph-spacing: 0px;
@@ -121,8 +121,8 @@
   --brk-card-hero-box-shadow-default-standard-color: #000000;
   --brk-card-hero-box-shadow-default-standard-type: dropShadow;
   --brk-card-hero-box-shadow-default-hover-x: 0;
-  --brk-card-hero-box-shadow-default-hover-y: 7px;
-  --brk-card-hero-box-shadow-default-hover-blur: 29px;
+  --brk-card-hero-box-shadow-default-hover-y: 7;
+  --brk-card-hero-box-shadow-default-hover-blur: 29;
   --brk-card-hero-box-shadow-default-hover-spread: 0;
   --brk-card-hero-box-shadow-default-hover-color: #e6e6e6;
   --brk-card-hero-box-shadow-default-hover-type: dropShadow;
@@ -140,7 +140,7 @@
   --brk-card-hero-sm-subheading-text-case: uppercase;
   --brk-card-hero-sm-heading-font-family: Graphik;
   --brk-card-hero-sm-heading-font-weight: Bold;
-  --brk-card-hero-sm-heading-line-height: 100%;
+  --brk-card-hero-sm-heading-line-height: 100%px;
   --brk-card-hero-sm-heading-font-size: 12px;
   --brk-card-hero-sm-heading-letter-spacing: 2%;
   --brk-card-hero-sm-heading-paragraph-spacing: 0px;
@@ -148,13 +148,13 @@
   --brk-card-hero-sm-heading-text-decoration: none;
   --brk-card-hero-sm-body-font-family: Graphik;
   --brk-card-hero-sm-body-font-weight: Regular;
-  --brk-card-hero-sm-body-line-height: 100%;
+  --brk-card-hero-sm-body-line-height: 100%px;
   --brk-card-hero-sm-body-font-size: 10px;
   --brk-card-hero-sm-body-letter-spacing: 2%;
   --brk-card-hero-sm-body-paragraph-spacing: 0px;
   --brk-card-hero-sm-body-text-decoration: none;
   --brk-card-hero-sm-body-text-case: none;
-  --brk-card-hero-sm-image-height: 180px;
+  --brk-card-hero-sm-image-height: 180;
   --brk-card-hero-md-padding-horizontal: 16px;
   --brk-card-hero-md-padding-vertical: 16px;
   --brk-card-hero-md-heading-margin-vertical: 4px;
@@ -169,7 +169,7 @@
   --brk-card-hero-md-subheading-text-case: uppercase;
   --brk-card-hero-md-heading-font-family: Graphik;
   --brk-card-hero-md-heading-font-weight: Bold;
-  --brk-card-hero-md-heading-line-height: 110%;
+  --brk-card-hero-md-heading-line-height: 110%px;
   --brk-card-hero-md-heading-font-size: 22px;
   --brk-card-hero-md-heading-letter-spacing: 2%;
   --brk-card-hero-md-heading-paragraph-spacing: 0px;
@@ -177,13 +177,13 @@
   --brk-card-hero-md-heading-text-decoration: none;
   --brk-card-hero-md-body-font-family: Graphik;
   --brk-card-hero-md-body-font-weight: Regular;
-  --brk-card-hero-md-body-line-height: 100%;
+  --brk-card-hero-md-body-line-height: 100%px;
   --brk-card-hero-md-body-font-size: 13px;
   --brk-card-hero-md-body-letter-spacing: 2%;
   --brk-card-hero-md-body-paragraph-spacing: 0px;
   --brk-card-hero-md-body-text-decoration: none;
   --brk-card-hero-md-body-text-case: none;
-  --brk-card-hero-md-image-height: 270px;
+  --brk-card-hero-md-image-height: 270;
   --brk-card-hero-lg-padding-horizontal: 24px;
   --brk-card-hero-lg-padding-vertical: 24px;
   --brk-card-hero-lg-heading-margin-vertical: 8px;
@@ -198,7 +198,7 @@
   --brk-card-hero-lg-subheading-text-case: uppercase;
   --brk-card-hero-lg-heading-font-family: Graphik;
   --brk-card-hero-lg-heading-font-weight: Bold;
-  --brk-card-hero-lg-heading-line-height: 110%;
+  --brk-card-hero-lg-heading-line-height: 110%px;
   --brk-card-hero-lg-heading-font-size: 24px;
   --brk-card-hero-lg-heading-letter-spacing: 2%;
   --brk-card-hero-lg-heading-paragraph-spacing: 0px;
@@ -206,13 +206,13 @@
   --brk-card-hero-lg-heading-text-decoration: none;
   --brk-card-hero-lg-body-font-family: Graphik;
   --brk-card-hero-lg-body-font-weight: Regular;
-  --brk-card-hero-lg-body-line-height: 100%;
+  --brk-card-hero-lg-body-line-height: 100%px;
   --brk-card-hero-lg-body-font-size: 16px;
   --brk-card-hero-lg-body-letter-spacing: 2%;
   --brk-card-hero-lg-body-paragraph-spacing: 0px;
   --brk-card-hero-lg-body-text-decoration: none;
   --brk-card-hero-lg-body-text-case: none;
-  --brk-card-hero-lg-image-height: 270px;
+  --brk-card-hero-lg-image-height: 270;
   --brk-card-hero-xl-padding-horizontal: 24px;
   --brk-card-hero-xl-padding-vertical: 24px;
   --brk-card-hero-xl-heading-margin-vertical: 8px;
@@ -227,7 +227,7 @@
   --brk-card-hero-xl-subheading-text-case: uppercase;
   --brk-card-hero-xl-heading-font-family: Graphik;
   --brk-card-hero-xl-heading-font-weight: Bold;
-  --brk-card-hero-xl-heading-line-height: 110%;
+  --brk-card-hero-xl-heading-line-height: 110%px;
   --brk-card-hero-xl-heading-font-size: 32px;
   --brk-card-hero-xl-heading-letter-spacing: 2%;
   --brk-card-hero-xl-heading-paragraph-spacing: 0px;
@@ -235,13 +235,13 @@
   --brk-card-hero-xl-heading-text-decoration: none;
   --brk-card-hero-xl-body-font-family: Graphik;
   --brk-card-hero-xl-body-font-weight: Regular;
-  --brk-card-hero-xl-body-line-height: 110%;
+  --brk-card-hero-xl-body-line-height: 110%px;
   --brk-card-hero-xl-body-font-size: 20px;
   --brk-card-hero-xl-body-letter-spacing: 2%;
   --brk-card-hero-xl-body-paragraph-spacing: 0px;
   --brk-card-hero-xl-body-text-decoration: none;
   --brk-card-hero-xl-body-text-case: none;
-  --brk-card-hero-xl-image-height: 320px;
+  --brk-card-hero-xl-image-height: 320;
   --brk-doc-card-hero-image-border-radius: 16px;
   --brk-jackpot-hero-sm-content-gap: 16px;
   --brk-jackpot-hero-sm-padding-horizontal: 10px;
@@ -249,7 +249,7 @@
   --brk-jackpot-hero-sm-amount-group-margin: 4px;
   --brk-jackpot-hero-sm-heading-font-family: Graphik;
   --brk-jackpot-hero-sm-heading-font-weight: Bold;
-  --brk-jackpot-hero-sm-heading-line-height: 100%;
+  --brk-jackpot-hero-sm-heading-line-height: 100%px;
   --brk-jackpot-hero-sm-heading-font-size: 10px;
   --brk-jackpot-hero-sm-heading-letter-spacing: -2%;
   --brk-jackpot-hero-sm-heading-paragraph-spacing: 0px;
@@ -257,22 +257,22 @@
   --brk-jackpot-hero-sm-heading-text-decoration: none;
   --brk-jackpot-hero-sm-body-font-family: Graphik;
   --brk-jackpot-hero-sm-body-font-weight: Medium;
-  --brk-jackpot-hero-sm-body-line-height: 100%;
+  --brk-jackpot-hero-sm-body-line-height: 100%px;
   --brk-jackpot-hero-sm-body-font-size: 12px;
   --brk-jackpot-hero-sm-body-letter-spacing: 2%;
   --brk-jackpot-hero-sm-body-paragraph-spacing: 0px;
   --brk-jackpot-hero-sm-body-text-case: none;
   --brk-jackpot-hero-sm-body-text-decoration: none;
-  --brk-jackpot-hero-sm-height: 36px;
-  --brk-jackpot-hero-sm-amount-digit-height: 20px;
-  --brk-jackpot-hero-sm-amount-digit-width: 14px;
+  --brk-jackpot-hero-sm-height: 36;
+  --brk-jackpot-hero-sm-amount-digit-height: 20;
+  --brk-jackpot-hero-sm-amount-digit-width: 14;
   --brk-jackpot-hero-md-content-gap: 16px;
   --brk-jackpot-hero-md-padding-horizontal: 16px;
   --brk-jackpot-hero-md-amount-digit-margin: 2px;
   --brk-jackpot-hero-md-amount-group-margin: 5px;
   --brk-jackpot-hero-md-heading-font-family: Graphik;
   --brk-jackpot-hero-md-heading-font-weight: Bold;
-  --brk-jackpot-hero-md-heading-line-height: 110%;
+  --brk-jackpot-hero-md-heading-line-height: 110%px;
   --brk-jackpot-hero-md-heading-font-size: 16px;
   --brk-jackpot-hero-md-heading-letter-spacing: -2%;
   --brk-jackpot-hero-md-heading-paragraph-spacing: 0px;
@@ -280,15 +280,15 @@
   --brk-jackpot-hero-md-heading-text-decoration: none;
   --brk-jackpot-hero-md-body-font-family: Graphik;
   --brk-jackpot-hero-md-body-font-weight: Medium;
-  --brk-jackpot-hero-md-body-line-height: 100%;
+  --brk-jackpot-hero-md-body-line-height: 100%px;
   --brk-jackpot-hero-md-body-font-size: 20px;
   --brk-jackpot-hero-md-body-letter-spacing: 2%;
   --brk-jackpot-hero-md-body-paragraph-spacing: 0px;
   --brk-jackpot-hero-md-body-text-case: none;
   --brk-jackpot-hero-md-body-text-decoration: none;
-  --brk-jackpot-hero-md-height: 60px;
-  --brk-jackpot-hero-md-amount-digit-height: 28px;
-  --brk-jackpot-hero-md-amount-digit-width: 20px;
+  --brk-jackpot-hero-md-height: 60;
+  --brk-jackpot-hero-md-amount-digit-height: 28;
+  --brk-jackpot-hero-md-amount-digit-width: 20;
   --brk-jackpot-hero-lg-content-gap: 24px;
   --brk-jackpot-hero-lg-padding-horizontal: 24px;
   --brk-jackpot-hero-lg-amount-digit-margin: 3px;
@@ -309,9 +309,9 @@
   --brk-jackpot-hero-lg-body-paragraph-spacing: 0px;
   --brk-jackpot-hero-lg-body-text-case: none;
   --brk-jackpot-hero-lg-body-text-decoration: none;
-  --brk-jackpot-hero-lg-height: 72px;
-  --brk-jackpot-hero-lg-amount-digit-height: 40px;
-  --brk-jackpot-hero-lg-amount-digit-width: 30px;
+  --brk-jackpot-hero-lg-height: 72;
+  --brk-jackpot-hero-lg-amount-digit-height: 40;
+  --brk-jackpot-hero-lg-amount-digit-width: 30;
   --brk-jackpot-hero-xl-content-gap: 24px;
   --brk-jackpot-hero-xl-padding-horizontal: 24px;
   --brk-jackpot-hero-xl-amount-digit-margin: 4px;
@@ -332,9 +332,9 @@
   --brk-jackpot-hero-xl-body-paragraph-spacing: 0px;
   --brk-jackpot-hero-xl-body-text-case: none;
   --brk-jackpot-hero-xl-body-text-decoration: none;
-  --brk-jackpot-hero-xl-height: 72px;
-  --brk-jackpot-hero-xl-amount-digit-height: 44px;
-  --brk-jackpot-hero-xl-amount-digit-width: 30px;
+  --brk-jackpot-hero-xl-height: 72;
+  --brk-jackpot-hero-xl-amount-digit-height: 44;
+  --brk-jackpot-hero-xl-amount-digit-width: 30;
   --brk-jackpot-hero-amount-digit-border-width: 0px;
   --brk-jackpot-hero-heading-font-color-standard: #ffffff;
   --brk-jackpot-hero-body-font-color-standard: #090f2a;
@@ -395,7 +395,7 @@
   --brk-opt-color-lq-main-728: #192872;
   --brk-opt-color-lq-main-800: #121d54;
   --brk-opt-color-lq-main-900: #090f2a;
-  --brk-opt-color-lq-main-saturation: 64px;
+  --brk-opt-color-lq-main-saturation: 64;
   --brk-opt-color-lq-main-hue: 230;
   --brk-opt-color-moj-main: #db1f1f;
   --brk-opt-color-moj-main-web: #e41f1f;

@@ -45,7 +45,9 @@ export const decorators = [
     }
     return {
       components: { story },
-      template: `<link href="/css/${cssTheme.file}" rel="stylesheet" id="theme-link" /><story />`
+      template: `
+      <link href="/css/fonts.css" rel="stylesheet" />
+      <link href="/css/${cssTheme.file}" rel="stylesheet" id="theme-link" /><story />`
     }
   },
   (story) => {
