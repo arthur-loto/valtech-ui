@@ -57,14 +57,10 @@ const element = computed(() => {
 <style lang="scss" scoped>
 .brk-button {
   /* tokens généraux */
-  --border-radius: var(
-    --brk-button-border-radius
-  ); /* pas de version tertiary? */
-  --outline: var(--brk-button-outline-width) solid transparent;
-  --outline-color-focus: var(--brk-button-outline-color-focus-standard);
-  --outline-offset: 0.125em; /* n'est pas dans les tokens */
-  --padding: var(--brk-button-padding-top) var(--brk-button-padding-right)
-    var(--brk-button-padding-bottom) var(--brk-button-padding-left);
+  --outline: var(--brk-interactive-outline-width) solid transparent;
+  --outline-color-focus: var(--brk-interactive-outline-color-focus-standard);
+  --outline-offset: var(--brk-interactive-outline-offset);
+  --padding: var(--brk-button-padding-top) var(--brk-button-padding-right) var(--brk-button-padding-bottom) var(--brk-button-padding-left);
 
   &.inverted {
     --outline-color-focus: var(--brk-button-outline-color-focus-inverted);
@@ -72,51 +68,18 @@ const element = computed(() => {
 }
 
 @mixin variantTokens($variant) {
-  --background-color: var(
-    --brk-button-#{$variant}-background-color-default-standard
-  );
-  --background-color-active: var(
-    --brk-button-#{$variant}-background-color-active-standard
-  );
-  --background-color-focus: var(
-    --brk-button-#{$variant}-background-color-focus-standard
-  );
-  --background-color-hover: var(
-    --brk-button-#{$variant}-background-color-hover-standard
-  );
-  --border: var(--brk-button-#{$variant}-border-width) solid
-    var(--brk-button-#{$variant}-border-color-default-standard);
-  --border-color-active: var(
-    --brk-button-#{$variant}-border-color-active-standard
-  );
-  --border-color-focus: var(
-    --brk-button-#{$variant}-border-color-focus-standard
-  );
-  --border-color-hover: var(
-    --brk-button-#{$variant}-border-color-hover-standard
-  );
-  --box-shadow: var(--brk-button-#{$variant}-box-shadow-default-standard-x)
-    var(--brk-button-#{$variant}-box-shadow-default-standard-y)
-    var(--brk-button-#{$variant}-box-shadow-default-standard-blur)
-    var(--brk-button-#{$variant}-box-shadow-default-standard-spread)
-    var(--brk-button-#{$variant}-box-shadow-default-standard-color);
-  --box-shadow-active: var(
-      --brk-button-#{$variant}-box-shadow-active-standard-x
-    )
-    var(--brk-button-#{$variant}-box-shadow-active-standard-y)
-    var(--brk-button-#{$variant}-box-shadow-active-standard-blur)
-    var(--brk-button-#{$variant}-box-shadow-active-standard-spread)
-    var(--brk-button-#{$variant}-box-shadow-active-standard-color);
-  --box-shadow-focus: var(--brk-button-#{$variant}-box-shadow-focus-standard-x)
-    var(--brk-button-#{$variant}-box-shadow-focus-standard-y)
-    var(--brk-button-#{$variant}-box-shadow-focus-standard-blur)
-    var(--brk-button-#{$variant}-box-shadow-focus-standard-spread)
-    var(--brk-button-#{$variant}-box-shadow-focus-standard-color);
-  --box-shadow-hover: var(--brk-button-#{$variant}-box-shadow-hover-standard-x)
-    var(--brk-button-#{$variant}-box-shadow-hover-standard-y)
-    var(--brk-button-#{$variant}-box-shadow-hover-standard-blur)
-    var(--brk-button-#{$variant}-box-shadow-hover-standard-spread)
-    var(--brk-button-#{$variant}-box-shadow-hover-standard-color);
+  --background-color: var(--brk-button-#{$variant}-background-color-default-standard);
+  --background-color-active: var(--brk-button-#{$variant}-background-color-active-standard);
+  --background-color-focus: var(--brk-button-#{$variant}-background-color-focus-standard);
+  --background-color-hover: var(--brk-button-#{$variant}-background-color-hover-standard);
+  --border: var(--brk-button-#{$variant}-border-width) solid var(--brk-button-#{$variant}-border-color-default-standard);
+  --border-color-active: var(--brk-button-#{$variant}-border-color-active-standard);
+  --border-color-focus: var(--brk-button-#{$variant}-border-color-focus-standard);
+  --border-color-hover: var(--brk-button-#{$variant}-border-color-hover-standard);
+  --border-radius: var(--brk-button-#{$variant}-sm-border-radius);
+  --box-shadow: var(--brk-button-#{$variant}-box-shadow-default-standard);
+  --box-shadow-focus: var(--brk-button-#{$variant}-box-shadow-focus-standard);
+  --box-shadow-hover: var(--brk-button-#{$variant}-box-shadow-hover-standard);
   --color: var(--brk-button-#{$variant}-font-color-default-standard);
   --color-active: var(--brk-button-#{$variant}-font-color-active-standard);
   --color-focus: var(--brk-button-#{$variant}-font-color-focus-standard);
@@ -124,74 +87,38 @@ const element = computed(() => {
   --font-family: var(--brk-button-#{$variant}-sm-label-font-family);
   --font-size: var(--brk-button-#{$variant}-sm-label-font-size);
   --font-weight: var(--brk-button-#{$variant}-sm-label-font-weight);
+  --height: var(--brk-button-#{$variant}-sm-height);
   --letter-spacing: var(--brk-button-#{$variant}-sm-label-letter-spacing);
-  --line-height: 85%; /* à mettre le token --brk-button-#{$variant}-sm-label-line-height quand il sera réparé */
+  --line-height: var(--brk-button-#{$variant}-sm-label-line-height);
   --text-decoration: var(--brk-button-#{$variant}-sm-label-text-decoration);
   --text-transform: var(--brk-button-#{$variant}-sm-label-text-case);
-  --padding: var(--brk-button-#{$variant}-sm-padding-vertical)
-    var(--brk-button-#{$variant}-sm-padding-horizontal);
+  --padding: 0 var(--brk-button-#{$variant}-sm-padding-horizontal);
   &.inverted {
-    --background-color: var(
-      --brk-button-#{$variant}-background-color-default-inverted
-    );
-    --background-color-active: var(
-      --brk-button-#{$variant}-background-color-active-inverted
-    );
-    --background-color-focus: var(
-      --brk-button-#{$variant}-background-color-focus-inverted
-    );
-    --background-color-hover: var(
-      --brk-button-#{$variant}-background-color-hover-inverted
-    );
-    --border: var(--brk-button-#{$variant}-border-width) solid
-      var(--brk-button-#{$variant}-border-color-default-inverted);
-    --border-color-active: var(
-      --brk-button-#{$variant}-border-color-active-inverted
-    );
-    --border-color-focus: var(
-      --brk-button-#{$variant}-border-color-focus-inverted
-    );
-    --border-color-hover: var(
-      --brk-button-#{$variant}-border-color-hover-inverted
-    );
-    --box-shadow: var(--brk-button-#{$variant}-box-shadow-default-inverted-x)
-      var(--brk-button-#{$variant}-box-shadow-default-inverted-y)
-      var(--brk-button-#{$variant}-box-shadow-default-inverted-blur)
-      var(--brk-button-#{$variant}-box-shadow-default-inverted-spread)
-      var(--brk-button-#{$variant}-box-shadow-default-inverted-color);
-    --box-shadow-active: var(
-        --brk-button-#{$variant}-box-shadow-active-inverted-x
-      )
-      var(--brk-button-#{$variant}-box-shadow-active-inverted-y)
-      var(--brk-button-#{$variant}-box-shadow-active-inverted-blur)
-      var(--brk-button-#{$variant}-box-shadow-active-inverted-spread)
-      var(--brk-button-#{$variant}-box-shadow-active-inverted-color);
-    --box-shadow-focus: var(
-        --brk-button-#{$variant}-box-shadow-focus-inverted-x
-      )
-      var(--brk-button-#{$variant}-box-shadow-focus-inverted-y)
-      var(--brk-button-#{$variant}-box-shadow-focus-inverted-blur)
-      var(--brk-button-#{$variant}-box-shadow-focus-inverted-spread)
-      var(--brk-button-#{$variant}-box-shadow-focus-inverted-color);
-    --box-shadow-hover: var(
-        --brk-button-#{$variant}-box-shadow-hover-inverted-x
-      )
-      var(--brk-button-#{$variant}-box-shadow-hover-inverted-y)
-      var(--brk-button-#{$variant}-box-shadow-hover-inverted-blur)
-      var(--brk-button-#{$variant}-box-shadow-hover-inverted-spread)
-      var(--brk-button-#{$variant}-box-shadow-hover-inverted-color);
+    --background-color: var(--brk-button-#{$variant}-background-color-default-inverted);
+    --background-color-active: var(--brk-button-#{$variant}-background-color-active-inverted);
+    --background-color-focus: var(--brk-button-#{$variant}-background-color-focus-inverted);
+    --background-color-hover: var(--brk-button-#{$variant}-background-color-hover-inverted);
+    --border: var(--brk-button-#{$variant}-border-width) solid var(--brk-button-#{$variant}-border-color-default-inverted);
+    --border-color-active: var(--brk-button-#{$variant}-border-color-active-inverted);
+    --border-color-focus: var(--brk-button-#{$variant}-border-color-focus-inverted);
+    --border-color-hover: var(--brk-button-#{$variant}-border-color-hover-inverted);
+    --box-shadow: var(--brk-button-#{$variant}-box-shadow-default-inverted);
+    --box-shadow-focus: var(--brk-button-#{$variant}-box-shadow-focus-inverted);
+    --box-shadow-hover: var(--brk-button-#{$variant}-box-shadow-hover-inverted);
     --color: var(--brk-button-#{$variant}-font-color-default-inverted);
     --color-active: var(--brk-button-#{$variant}-font-color-active-inverted);
     --color-focus: var(--brk-button-#{$variant}-font-color-focus-inverted);
     --color-hover: var(--brk-button-#{$variant}-font-color-hover-inverted);
+    --outline-color-focus: var(--brk-interactive-outline-color-focus-inverted);
   }
 
   $breakpoints: (md, lg, xl);
   @each $bp in $breakpoints {
     &.#{$bp} {
+      --border-radius: var(--brk-button-#{$variant}-#{$bp}-border-radius);
       --font-size: var(--brk-button-#{$variant}-#{$bp}-label-font-size);
-      --padding: var(--brk-button-#{$variant}-#{$bp}-padding-vertical)
-        var(--brk-button-#{$variant}-#{$bp}-padding-horizontal);
+      --height: var(--brk-button-#{$variant}-#{$bp}-height);
+      --padding: 0 var(--brk-button-#{$variant}-#{$bp}-padding-horizontal);
     }
   }
 }
@@ -215,14 +142,18 @@ const element = computed(() => {
   box-shadow: var(--box-shadow);
   color: var(--color);
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
+  height: var(--height);
+  justify-content: center;
   letter-spacing: var(--letter-spacing);
   line-height: var(--line-height);
   margin: 0;
   outline: var(--outline);
+  outline-offset: var(--outline-offset);
   padding: var(--padding);
   text-decoration: var(--text-decoration);
   text-transform: var(--text-transform);

@@ -6,34 +6,33 @@ export default {
   argTypes: {
     label: {
       control: { type: 'text' },
-      description: "Texte qui sera ajouté dans le bouton",
-      name: "Libellé du bouton",
+      description: "Libellé du bouton.",
     },
     accessibilityText : {
       control: { type: 'text' },
-      description : 'Texte pour les lecteurs d\'ecrans',
-      name: "Texte d'accessibilité",
+      description : 'Texte pour les lecteurs d\'ecrans.',
     },
     link: {
       control: { type: 'text' },
       description:
-        "Lien qui sera ajouté sur le bouton. Ceci transforme le bouton en lien avec la balise de lien html",
-      name: "Lien URL",
+        "Lien (URL) du bouton. Transforme le bouton en lien avec la balise &lt;a&gt;.",
     },
     variant: {
       control: "select",
-      description: "Indique si le bouton est primaire, secondaire et tertiaire",
+      description: "Indique le style du bouton entre primaire, secondaire et tertiaire.",
       options: ["primary", "secondary", "tertiary"],
-      name: "Variant",
     },
     size: {
       control: { type: 'select' },
+      description: "Indique la taille du bouton.",
       options: ['sm', 'md', 'lg', 'xl'],
     },
     inverted: {
       control: { type: "boolean" },
-      description: "Visuel inversé",
-      name: "Visuel inversé",
+      description: "Active le visuel inversé.",
+    },
+    callback: {
+      description: "Reçoit une méthode JavaScript à appeler au clic du bouton."
     }
   },
 };
@@ -56,3 +55,4 @@ Tertiary.args = {
   inverted: false,
   callback: () => { console.log('click'); }
 };
+Tertiary.storyName = "Tertiaire";
