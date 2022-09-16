@@ -1,3 +1,35 @@
+<script lang="ts" setup>
+import { ref, computed } from 'vue'
+
+export interface CardNavLinkProps {
+  url: string | null
+  label: string | null
+  newWindow: boolean | null
+}
+
+export interface BrkCardNavProps {
+  btnOpenLabel: string
+  btnCloseLabel: string
+  links: any[]
+}
+
+const props = defineProps<BrkCardNavProps>()
+
+let isVisible = ref(false)
+const classes = computed(() => {
+  return isVisible.value ? 'is-visible' : ''
+})
+
+const ariaLabel = computed(() => {
+  return isVisible.value ? props.btnCloseLabel : props.btnOpenLabel
+})
+
+function toggleNav() {
+  console.log('toggling nav', isVisible.value)
+  isVisible.value = !isVisible.value
+}
+</script>
+
 <template>
   <div class="brk-card-nav" :class="classes">
     <button class="btn-open-menu" :aria-label="ariaLabel" @click="toggleNav">
@@ -5,7 +37,7 @@
     </button>
     <ul>
       <li v-for="link in links" :key="link">
-        <a :href="link.url" :target="link.newWindow ? '_blank' : null">
+        <a :href="link.url" :target="link.newWindow ? '_blank' : ''">
           {{ link.label }}
           <span class="material-icons" aria-hidden="true">chevron_right</span>
         </a>
@@ -13,29 +45,6 @@
     </ul>
   </div>
 </template>
-
-<script setup>
-import { ref, computed } from 'vue';
-
-const props = defineProps({
-  btnOpenLabel: { type: String, default: 'Ouvrir' },
-  btnCloseLabel: { type: String, default: 'Fermer' },
-  links: { type: Object, required: true }
-});
-
-let isVisible = ref(false);
-const classes = computed(() => {
-    return isVisible.value ? 'is-visible' : '';
-});
-const ariaLabel = computed(() => {
-    return isVisible.value ? props.btnCloseLabel : props.btnOpenLabel;
-});
-
-function toggleNav() {
-  console.log("toggling nav", isVisible.value);
-  isVisible.value = !isVisible.value;
-}
-</script>
 
 <style scoped lang="scss">
 .brk-card-nav {
@@ -101,7 +110,7 @@ function toggleNav() {
 
   li + li::before {
     background-color: red;
-    content: "";
+    content: '';
     display: block;
     height: 1px;
     margin: 0 15px;
@@ -135,7 +144,7 @@ function toggleNav() {
 .material-icons {
   direction: ltr;
   display: inline-block;
-  font-family: "Material Icons";
+  font-family: 'Material Icons';
   font-size: 24px;
   font-style: normal;
   font-weight: normal;
