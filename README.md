@@ -1,6 +1,3 @@
-Test pour MR
-
-
 # Valtech UI Component Library
 
 Inspired by https://github.com/wuruoyun/vue-component-lib-starter
