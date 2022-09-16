@@ -1,3 +1,21 @@
+<script lang="ts" setup>
+import { ImgPropsItf } from '../general-interfaces'
+
+export interface TripleImagesProps {
+  bg: ImgPropsItf[]
+  bgWebp: ImgPropsItf[]
+  character: ImgPropsItf[]
+  characterWebp: ImgPropsItf[]
+  logo: ImgPropsItf[]
+  logoWebp: ImgPropsItf[]
+  alt: string
+  positionChr: string
+  link: string
+}
+
+const props = defineProps<TripleImagesProps>()
+</script>
+
 <template>
   <figure class="triple-image">
     <brk-image
@@ -34,43 +52,6 @@
   </figure>
 </template>
 
-<script setup>
-import { ref, computed, onMounted } from "vue";
-import BrkImage from "../BrkImage/BrkImage.vue";
-
-const props = defineProps({
-  bg: {
-    type: Array,
-  },
-  bgWebp: {
-    type: Array,
-  },
-  character: {
-    type: Array,
-  },
-  characterWebp: {
-    type: Array,
-  },
-  logo: {
-    type: Array,
-  },
-  logoWebp: {
-    type: Array,
-  },
-  alt: {
-    type: String,
-  },
-  positionChr: {
-    type: String,
-    default() {
-      return "right";
-    },
-  },
-  link: {
-    type: String,
-  }
-});
-</script>
 <style lang="scss" scoped>
 .triple-image {
   height: 200px;
@@ -91,7 +72,6 @@ const props = defineProps({
   }
   .character {
     height: 100%;
-    min-width: 1px; /*Ajouté afin de régler un bug d'affichage du personnage*/
     position: absolute;
     top: 0;
 

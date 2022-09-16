@@ -1,3 +1,33 @@
+<script lang="ts" setup>
+import { computed } from 'vue'
+
+export interface ButtonProps {
+  label: string
+  accessibilityText?: string
+  link: string
+  callback?: any
+  variant: string
+  size?: string
+  inverted?: boolean
+}
+
+const props = defineProps<ButtonProps>()
+
+const classes = computed(() => {
+  return `${props.size} ${props.variant} ${props.inverted ? 'inverted' : ''}`
+})
+
+const element = computed(() => {
+  if (props.link) {
+    return 'a'
+  } else if (props.callback) {
+    return 'button'
+  } else {
+    return 'span'
+  }
+})
+</script>
+
 <template>
   <component
     :is="element"
@@ -11,56 +41,14 @@
   </component>
 </template>
 
-<script setup>
-import { computed } from "vue";
-
-const props = defineProps({
-  label: {
-    type: String,
-    required: true,
-  },
-  accessibilityText: {
-    type: String,
-  },
-  link: {
-    type: String,
-  },
-  callback: {},
-  variant: {
-    type: String,
-    required: true,
-    default: "tertiary",
-  },
-  size: {
-    type: String,
-    default: "sm",
-  },
-  inverted: {
-    type: Boolean,
-  },
-});
-
-const classes = computed(() => {
-  return `${props.size} ${props.variant} ${props.inverted ? "inverted" : ""}`;
-});
-const element = computed(() => {
-  if (props.link) {
-    return "a";
-  } else if (props.callback) {
-    return "button";
-  } else {
-    return "span";
-  }
-});
-</script>
-
 <style lang="scss" scoped>
 .brk-button {
   /* tokens généraux */
   --outline: var(--brk-interactive-outline-width) solid transparent;
   --outline-color-focus: var(--brk-interactive-outline-color-focus-standard);
   --outline-offset: var(--brk-interactive-outline-offset);
-  --padding: var(--brk-button-padding-top) var(--brk-button-padding-right) var(--brk-button-padding-bottom) var(--brk-button-padding-left);
+  --padding: var(--brk-button-padding-top) var(--brk-button-padding-right) var(--brk-button-padding-bottom)
+    var(--brk-button-padding-left);
 
   &.inverted {
     --outline-color-focus: var(--brk-button-outline-color-focus-inverted);
@@ -98,7 +86,8 @@ const element = computed(() => {
     --background-color-active: var(--brk-button-#{$variant}-background-color-active-inverted);
     --background-color-focus: var(--brk-button-#{$variant}-background-color-focus-inverted);
     --background-color-hover: var(--brk-button-#{$variant}-background-color-hover-inverted);
-    --border: var(--brk-button-#{$variant}-border-width) solid var(--brk-button-#{$variant}-border-color-default-inverted);
+    --border: var(--brk-button-#{$variant}-border-width) solid
+      var(--brk-button-#{$variant}-border-color-default-inverted);
     --border-color-active: var(--brk-button-#{$variant}-border-color-active-inverted);
     --border-color-focus: var(--brk-button-#{$variant}-border-color-focus-inverted);
     --border-color-hover: var(--brk-button-#{$variant}-border-color-hover-inverted);
@@ -123,14 +112,14 @@ const element = computed(() => {
   }
 }
 /*
-.primary {
-  @include variantTokens(primary);
-}
-
-.secondary {
-  @include variantTokens(secondary);
-}
-*/
+      .primary {
+        @include variantTokens(primary);
+      }
+      
+      .secondary {
+        @include variantTokens(secondary);
+      }
+      */
 .tertiary {
   @include variantTokens(tertiary);
 }

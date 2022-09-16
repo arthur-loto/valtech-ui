@@ -1,3 +1,76 @@
+<script lang="ts" setup>
+import { computed } from 'vue'
+import { ImgPropsItf } from '../general-interfaces'
+
+export interface BrkJackpotProps {
+  backgroundColor: string
+  brkImageArgs: BkrImgArgs
+  text: string
+  totalAmount: string
+  format: string
+  size: boolean
+}
+
+export interface BkrImgArgs {
+  src: ImgPropsItf[]
+  alt: string
+}
+
+const props = defineProps<BrkJackpotProps>()
+
+const hasImage = computed(() => {
+  return props.brkImageArgs && typeof props.brkImageArgs === 'object'
+})
+
+const classes = computed(() => {
+  return props.format ? 'format-' + props.format : ''
+})
+
+const bgStyle = computed(() => {
+  return props.backgroundColor ? 'background-color:' + props.backgroundColor : ''
+})
+
+const amountStructure = computed(() => {
+  const str = props.totalAmount
+  const numbers = []
+  for (let i = 0; i < str.length; i++) {
+    numbers.push(str.charAt(i))
+  }
+  const reverseNumbers = numbers.reverse()
+  const amountStructure: any = []
+
+  for (let i = 0; i < reverseNumbers.length; i++) {
+    const j = i % 3
+    const structSpan: any = {}
+    if (j == 0 && i > 0) {
+      const structSeparator = {
+        class: 'separator',
+        text: '',
+      }
+
+      amountStructure.unshift(structSeparator)
+    }
+    structSpan.class = 'digit'
+    structSpan.text = reverseNumbers[i]
+
+    amountStructure.unshift(structSpan)
+  }
+
+  const dollar = {
+    class: 'dollar',
+    text: '$',
+  }
+
+  if (props.format == 'fr') {
+    amountStructure.push(dollar)
+  } else {
+    amountStructure.unshift(dollar)
+  }
+
+  return amountStructure
+})
+</script>
+
 <template>
   <div
     class="brk-card-jackpot"
@@ -10,103 +83,26 @@
         v-bind="brkImageArgs"
         sizing="vertical"
         class="brk-image"
-      ></BrkImage>
-      <span v-else class="title">{{ text }}</span>
-      <span class="jackpot" :class="classes">
-        <span v-for="span in amountStructure" :key="span" :class="span.class">
+      />
+      <span
+        v-else
+        class="title"
+      >{{ text }}</span>
+      <span
+        class="jackpot"
+        :class="classes"
+      >
+        <span
+          v-for="span in amountStructure"
+          :key="span"
+          :class="span.class"
+        >
           {{ span.text }}
         </span>
       </span>
     </p>
   </div>
 </template>
-
-<script setup>
-import BrkImage from "../BrkImage/BrkImage.vue";
-import { onMounted, ref, computed } from "vue";
-
-const props = defineProps({
-  backgroundColor: {
-    type: String,
-  },
-  brkImageArgs: {
-    type: Object,
-  },
-  text: {
-    type: String,
-    required: true,
-    default: "Lot Progressif",
-  },
-  totalAmount: {
-    type: String,
-    required: true,
-    default: "0",
-  },
-  format: {
-    type: String,
-    required: true,
-    default: "fr",
-  },
-  size: {
-    type: String,
-    default: "sm"
-  }
-});
-
-const hasImage = computed(() => {
-  return ( props.brkImageArgs && typeof props.brkImageArgs === 'object' );
-});
-
-const classes = computed(() => {
-  return props.format ? "format-" + props.format : "";
-});
-
-const bgStyle = computed(() => {
-  return props.backgroundColor
-    ? "background-color:" + props.backgroundColor
-    : "";
-});
-
-const amountStructure = computed(() => {
-  let str = props.totalAmount;
-  let numbers = [];
-  for (let i = 0; i < str.length; i++) {
-    numbers.push(str.charAt(i));
-  }
-  let reverseNumbers = numbers.reverse();
-  let amountStructure = [];
-
-  for (let i = 0; i < reverseNumbers.length; i++) {
-    let j = i % 3;
-    let structSpan = {};
-    if (j == 0 && i > 0) {
-      let structSeparator = {
-        class: "separator",
-        text: "",
-      };
-
-      amountStructure.unshift(structSeparator);
-    }
-    structSpan.class = "digit";
-    structSpan.text = reverseNumbers[i];
-
-    amountStructure.unshift(structSpan);
-  }
-
-  let dollar = {
-    class: "dollar",
-    text: "$",
-  };
-
-  if (props.format == "fr") {
-    amountStructure.push(dollar);
-  } else {
-    amountStructure.unshift(dollar);
-  }
-
-  return amountStructure;
-});
-</script>
 
 <style lang="scss" scoped>
 .brk-card-jackpot {
@@ -116,8 +112,8 @@ const amountStructure = computed(() => {
   --content-gap: var(--brk-jackpot-hero-sm-content-gap);
   --height: var(--brk-jackpot-hero-sm-height);
   /* --border-width: var(--brk-jackpot-hero-body-box-border-width);
-      Il n'y a pas de token pour le border-width de la boite 
-      Alternative temporaire : */
+                Il n'y a pas de token pour le border-width de la boite 
+                Alternative temporaire : */
   --border-width: var(--brk-jackpot-hero-amount-digit-border-width);
 
   /* title */
@@ -223,7 +219,7 @@ const amountStructure = computed(() => {
     }
 
     &.format-en .separator::before {
-      content: ",";
+      content: ',';
     }
 
     span:last-of-type {
